@@ -9,6 +9,17 @@
     <WebView
         android:id="@+id/webview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        />
+    <com.airbnb.lottie.LottieAnimationView
+        android:visibility="invisible"
+        android:layout_centerInParent="true"
+        android:id="@+id/loading"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:lottie_rawRes="@raw/loading4"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
 
 </RelativeLayout>
