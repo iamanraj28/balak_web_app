@@ -1,2 +1,7 @@
 # balak_web_app
-initial balak web app v1.0
+New Update is Out
+
+Whats New?
+~ Some UI Improvements
+~ Added New Loading Animation
+~ Some Bug Fixes
