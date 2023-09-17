@@ -1,18 +1,28 @@
 package com.iamanraj.balak;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
-import android.graphics.Bitmap;
+import android.Manifest;
+import android.app.Activity;
+import android.app.Service;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.view.View;
 import android.view.Window;
 import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ProgressBar;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
 
         webview = findViewById(R.id.webview);
         loading = findViewById(R.id.loading);
+
+        perm();
 
         getWindow().setFeatureInt( Window.FEATURE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
 
@@ -55,6 +67,18 @@ public class MainActivity extends AppCompatActivity {
 
     }// OnCreate method Close Here =======================
 
+    private void perm() {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+            int permissionNotif = ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS);
+
+            if (permissionNotif != PackageManager.PERMISSION_GRANTED){
+                String[] NOTIF_PERM = {Manifest.permission.POST_NOTIFICATIONS};
+                ActivityCompat.requestPermissions(this,NOTIF_PERM,100);
+            }
+        }
+    }
+
     private class HelloWebViewClient extends WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -70,4 +94,8 @@ public class MainActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
+
+
+
+
 }

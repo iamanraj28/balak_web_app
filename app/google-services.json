@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "260909997300",
+    "project_id": "balak-sce",
+    "storage_bucket": "balak-sce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:260909997300:android:82317aab2d57f0d2cd12a1",
+        "android_client_info": {
+          "package_name": "com.iamanraj.balak"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7pEKNFvckkM_stLNEbIrRK8J_Q8zKLxQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
